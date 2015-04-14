@@ -1,0 +1,27 @@
+{
+    "name": "coffee-lint-loader",
+    "description": "Coffeelint loader module for Webpack",
+    "keywords": [
+        "webpack",
+        "lint",
+        "coffee-script",
+        "loader",
+        "coffeelint"
+    ],
+    "author": {
+        "name": "Lewis Barnes"
+    },
+    "version": "0.0.1",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lewie9021/coffeelint-loader"
+    },
+    "dependencies": {
+        "coffeelint": "1.9.x",
+        "loader-utils": "0.2.x",
+        "strip-json-comments": "1.0.x",
+        "chalk": "1.0.x",
+        "text-table": "0.2.x"
+    }
+}
