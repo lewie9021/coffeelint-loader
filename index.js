@@ -76,9 +76,8 @@ function merge(options, query) {
     return opts;
 }
 
-function loadConfig(webpack, callback) {
-    var opts = webpack.options;
-    var path = opts.coffeelint && opts.coffeelint.configFile;
+function loadConfig(webpack, options, callback) {
+    var path = options.configFile || './coffeelint.json';
 
     if (!path) { return callback ? callback() : null; }
 
@@ -142,14 +141,14 @@ module.exports = function(input) {
     
     if (!callback) {
 	// Load config synchronously.
-        var config = loadConfig(webpack);
+        var config = loadConfig(webpack, options);
 
 	process(webpack, input, extend(options, config));
 	return input;
     }
 
     // Load config asynchronously.
-    loadConfig(webpack, function(err, config) {
+    loadConfig(webpack, options, function(err, config) {
 	if (err) { return callback(err); }
 
 	try {
